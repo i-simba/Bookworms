@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">BookWorm</string>
+    <string name="app_logo">Logo</string>
+    <string name="favorite_text">FAVORITES</string>
+    <string name="reading_text">READING</string>
+    <string name="catalog_text">CATALOG</string>
+    <string name="fav_panel_text">FavPanel</string>
+    <string name="read_panel_text">ReadPanel</string>
+    <string name="add_prompt">ADD BOOK</string>
+    <string name="add_pic">ADD PIC</string>
+    <string name="hint_title">Enter Title</string>
+    <string name="hint_synopsis">Enter Synopsis</string>
+    <string name="hint_quote">Enter Quote</string>
+    <string name="hint_author">Enter Author</string>
+    <string name="hint_genre">Enter Genre</string>
+    <string name="list_books">LIST OF ALL BOOKS</string>
+</resources>

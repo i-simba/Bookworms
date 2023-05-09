@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#A8A39D">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/moveBookLayout"
+        android:layout_width="360dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="-150dp"
+        app:layout_constraintBottom_toTopOf="@+id/moveToReadButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/moveTitleText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/hint_title" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/moveToReadButton"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:backgroundTint="#A97E78"
+        android:text="READING"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/moveBookLayout" />
+
+    <Button
+        android:id="@+id/moveToFavoritesButton"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="150dp"
+        android:backgroundTint="#A97E78"
+        android:text="FAVORITES"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/moveBookLayout" />
+
+    <ScrollView
+        android:layout_width="360dp"
+        android:layout_height="200dp"
+        android:background="#CDC3B5"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintBottom_toTopOf="@+id/moveBookLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/bookListLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

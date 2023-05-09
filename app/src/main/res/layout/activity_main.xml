@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CBDAD5"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/bookwormLogo"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_marginTop="25dp"
+        android:contentDescription="@string/app_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bookworm" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="360dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="24dp"
+        android:background="#4D6160"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bookwormLogo">
+
+        <TextView
+            android:id="@+id/appNameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/asset"
+            android:text="@string/app_name"
+            android:textColor="#FFFFFF"
+            android:textSize="26sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bookDisplayLayout"
+        android:layout_width="360dp"
+        android:layout_height="400dp"
+        android:layout_marginTop="10dp"
+        android:background="#EFD9B4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/readingTab"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:background="#72655A"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/readTabText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:text="@string/reading_text"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/favoriteTab"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:background="#72655A"
+            app:layout_constraintStart_toEndOf="@+id/readingTab"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/favTabText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:text="@string/favorite_text"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/catalogTab"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:background="#72655A"
+            app:layout_constraintStart_toEndOf="@+id/favoriteTab"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/catalogTabText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:text="@string/catalog_text"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ScrollView
+            android:id="@+id/bookDisplayScroll"
+            android:layout_width="358dp"
+            android:layout_height="358dp"
+            android:contentDescription="@string/app_name"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/favoriteTab">
+
+            <LinearLayout
+                android:id="@+id/bookList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/moveBookButton"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#A97E78"
+        android:foregroundTint="#5C2626"
+        android:text="MOVE BOOK"
+        android:translationX="-30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bookDisplayLayout"
+        app:layout_constraintVertical_bias="0.523" />
+
+    <Button
+        android:id="@+id/addBookButton"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#A97E78"
+        android:foregroundTint="#5C2626"
+        android:text="@string/add_prompt"
+        android:translationX="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bookDisplayLayout"
+        app:layout_constraintVertical_bias="0.523" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
